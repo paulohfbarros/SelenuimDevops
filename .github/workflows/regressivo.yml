@@ -39,7 +39,7 @@ jobs:
 
       - name: Arquivar Report
         if: always()
-        uses: actions/checkout@v3
+        uses: actions/upload-artifact@v3
         with:
           name: report-execution
           path: "**/formated-report"
