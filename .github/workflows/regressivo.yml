@@ -33,3 +33,13 @@ jobs:
         run: |
           mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci cluecumber-report:reporting
 
+      - name: Gerar Relatório
+        run: | 
+          mvn cluecumber-report:reporting
+
+      - name: Arquivar Report
+        if: always()
+        uses: actions/checkout@v3
+        with:
+          name: report-execution
+          path: "**/formated-report"
