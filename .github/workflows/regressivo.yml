@@ -1,4 +1,4 @@
-name: Testes Regressivos Paulo
+name: Testes Regressivos do PR Paulo
 
 on:
   pull_request:
@@ -45,7 +45,7 @@ jobs:
           name: report-execution
           path: "**/formated-report"
 
-      - name: Slack Notification
+      - name: Slack Notification Sucesso
         uses: rtCamp/action-slack-notify@v2
         if: ${{ success() }}
         env:
@@ -57,7 +57,7 @@ jobs:
           SLACK_TITLE: 'Os testes do PR passaram!'
           SLACK_USERNAME: SUCESSO
 
-      - name: Slack Notification
+      - name: Slack Notification Falha
         uses: rtCamp/action-slack-notify@v2
         if: ${{ failure() }}
         env:
